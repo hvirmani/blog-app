@@ -1,0 +1,37 @@
+<%- include('./partials/header')%>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <div class="card mt-3">
+        <img
+          class="card-img-top p-1"
+          src="/images/img.jfif"
+          alt="Card image"
+          style="width: 100%; max-height: 350px"
+        />
+        <div class="card-body">
+          <h4 class="card-title"><%= item.title %></h4>
+          <p class="text-muted"><%= item.username %></p>
+          <p class="card-text"><%= item.blog %></p>
+          <div class="d-flex flex-row justify-around align-items-center">
+            <a
+              href="/blogs/<%=item.id%>/edit"
+              class="btn btn-lg btn-primary me-auto"
+              >Edit</a
+            >
+            <form
+              class="form-inline p-0"
+              action="/blogs/<%=item.id%>?_method=DELETE"
+              method="post"
+            >
+              <button class="btn btn-lg btn-danger m-0">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer')%>

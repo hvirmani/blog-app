@@ -1,0 +1,51 @@
+<%- include('./partials/header')%>
+
+<div class="container my-4 ml-6 mr-6">
+  <div
+    class="card bg-dark text-white mb-5 border-0 overflow-hidden display-2"
+    id="card"
+  >
+    <img
+      class="card-img opacity-75"
+      src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      alt="Card image"
+      height="350px"
+    />
+    <div class="card-img-overlay p-5 w-50 d-none d-lg-block">
+      <h1 class="card-title mb-4">Blog Post title</h1>
+      <p class="card-text">
+        Multiple lines of text that form the lede, informing new readers quickly
+        and efficiently about what's most interesting in this post's contents.
+      </p>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <%for(let item of blogs){%>
+    <div class="col-lg-6 mb-3">
+      <div
+        class="row g-0 border rounded flex-md-row shadow-sm position-relative"
+      >
+        <div class="col-12 col-sm-8 p-3">
+          <h3 class="mb-1"><%=item.title%></h3>
+          <div class="mb-2 text-muted"><%= item.date %></div>
+          <p class="card-text mb-2"><%=item.blog.substring(0,150)%> ...</p>
+          <a href="/blogs/<%=item.id%>" class="stretched-link"
+            >Continue reading</a
+          >
+        </div>
+        <div class="col-4 d-none d-sm-block">
+          <img
+            class="bd-placeholder-img p-1"
+            height="100%"
+            width="100%"
+            style="border-radius: 0.5rem"
+            src="/images/img.jfif"
+          />
+        </div>
+      </div>
+    </div>
+    <%}%>
+  </div>
+</div>
+
+<%- include('./partials/footer')%>

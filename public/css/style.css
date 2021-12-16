@@ -1,0 +1,29 @@
+/* h1 {
+  text-align: center;
+}
+
+
+li {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 10px auto;
+  box-shadow: 0px 0px 2px rgb(104, 104, 104);
+  border-radius: 10px;
+  width: 400px;
+}*/
+form {
+  max-width: 800px;
+  padding: 10px;
+}
+form div,
+form button {
+  margin: 10px auto;
+}
+
+nav a {
+  font-size: 25px !important;
+}
+#card {
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}

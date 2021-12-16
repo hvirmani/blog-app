@@ -1,0 +1,40 @@
+<%- include('./partials/header')%>
+<h1 class="text-center mt-4">Edit Blog</h1>
+
+<form
+  class="form mx-auto"
+  action="/blogs/<%=foundBlog.id%>?_method=PATCH"
+  method="post"
+>
+  <div class="form-group mb-3">
+    <label class="form-label" for="username">Username</label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      required
+      class="form-control"
+      value="<%= foundBlog.username %>"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label class="form-label" for="title">Title</label>
+    <input
+      type="text"
+      name="title"
+      id="title"
+      required
+      class="form-control"
+      value="<%= foundBlog.title %>"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label class="form-label" for="blog">Blog</label>
+    <textarea rows="5" name="blog" id="blog" class="form-control">
+<%= foundBlog.blog %></textarea
+    >
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
+<%- include('./partials/footer')%>
