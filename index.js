@@ -17,6 +17,7 @@ const months = [
   "Nov",
   "Dec",
 ];
+const PORT = process.env.PORT || 8080;
 let blogs = [
   {
     username: "User 1",
@@ -134,6 +135,6 @@ app.get("*", function (req, res) {
   res.redirect("/blogs");
 });
 
-app.listen(3200, function () {
-  console.log("Listening on server 3200");
+app.listen(PORT, function () {
+  console.log(`Listening on server ${PORT}`);
 });
